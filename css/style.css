@@ -1,0 +1,25 @@
+h1{
+    font-family: "Aref Ruqaa Ink";
+    color: #FAE07D;
+    text-align: center;
+    font-size: 5rem;
+}
+
+body{
+    background-color: #B546FA;
+}
+#hero{
+    text-align: center;
+    font-family: "Poppins";
+    color: #8FFBC9;
+    font-size: 4rem;
+}
+#hobbies{
+    color: #E1E6E8;
+    font-size: 3rem;
+    border-style: solid;
+    border-color: #E1E6E8;
+}
+footer{
+    font-size: 2rem;
+}

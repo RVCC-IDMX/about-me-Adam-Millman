@@ -1,7 +1,14 @@
-h1 h2{
+h1, h2{
     font-family: "Aref Ruqaa Ink";
     color: #FAE07D;
     text-align: center;
+}
+
+h1{
+    font-size: 7rem;
+}
+
+h2{
     font-size: 5rem;
 }
 
@@ -14,12 +21,33 @@ body{
     color: #8FFBC9;
     font-size: 4rem;
 }
-#hobbies{
+#hobbies ol{
     color: #E1E6E8;
     font-size: 3rem;
     border-style: solid;
     border-color: #E1E6E8;
+    margin-left: 3rem;
+    list-style-position: outside;
+}
+
+#Gallery figure{
+    text-align: center;
+    border: .5rem solid white;
+    float: left;
+    margin: 1rem;
+}
+#Gallery figure:hover{
+    border: 1rem double burlywood;
+}
+
+figcaption{
+    text-align: center;
+    font-size: 3rem;
 }
 footer{
+    text-align: bottom;
+    position: absolute, bottom;
+    bottom: 0;
     font-size: 2rem;
 }
+

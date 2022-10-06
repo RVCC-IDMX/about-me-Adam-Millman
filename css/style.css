@@ -18,24 +18,34 @@ body{
 #hero{
     text-align: center;
     font-family: "Poppins";
-    color: #8FFBC9;
+    color: white;
     font-size: 4rem;
+}
+
+#hero img{
+    border: #8FFBC9 solid 2rem;
+    border-radius: 100rem;
+    height: 50rem;
+    width: 50rem;
+    background-color: white;
+    box-shadow: 1rem inset grey;
 }
 #hobbies ol{
     color: #E1E6E8;
     font-size: 3rem;
     border-style: solid;
     border-color: #E1E6E8;
-    margin-left: 3rem;
-    list-style-position: outside;
+    list-style-position: inside;
 }
 
 #Gallery figure{
     text-align: center;
     border: .5rem solid white;
-    float: left;
-    margin: 1rem;
+    align-content: center;
+    margin: 2rem;
+    padding: 2rem;
 }
+
 #Gallery figure:hover{
     border: 1rem double burlywood;
 }
@@ -44,10 +54,14 @@ figcaption{
     text-align: center;
     font-size: 3rem;
 }
+
 footer{
-    text-align: bottom;
-    position: absolute, bottom;
-    bottom: 0;
-    font-size: 2rem;
+    height: 3rem;
+    padding: 1.5rem;
+    font-size: 3rem;
+    border: 2px black solid;
+    text-align: center;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem; 
 }
 

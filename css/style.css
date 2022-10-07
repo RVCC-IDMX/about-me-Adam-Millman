@@ -30,12 +30,18 @@ body{
     background-image: linear-gradient(to bottom right, purple 33%, blue);
     box-shadow: 1rem inset grey;
 }
+
 #hobbies ol{
     color: black;
     font-size: 3rem;
     border-style: solid;
     border-color: skyblue;
     list-style-position: inside;
+}
+
+#hobbies ol li:hover{
+    font-size: 5rem;
+
 }
 
 #hobbies ol li ul li ul{
@@ -52,9 +58,9 @@ body{
 }
 
 #Gallery figure:hover{
-    border: 1rem double red;
+    border: 1rem double darkorange;
     box-shadow: 10px 10px grey;
-    color: ;
+    color: darkorange;
 }
 
 figcaption{

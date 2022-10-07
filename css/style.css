@@ -1,6 +1,6 @@
 h1, h2{
     font-family: "Aref Ruqaa Ink";
-    color: #FAE07D;
+    color: blue;
     text-align: center;
 }
 
@@ -13,41 +13,48 @@ h2{
 }
 
 body{
-    background-color: #B546FA;
+    background-color: lightgoldenrodyellow;
 }
 #hero{
     text-align: center;
     font-family: "Poppins";
-    color: white;
+    color: black;
     font-size: 4rem;
 }
 
 #hero img{
-    border: #8FFBC9 solid 2rem;
+    border: skyblue solid 2rem;
     border-radius: 100rem;
     height: 50rem;
     width: 50rem;
-    background-color: white;
+    background-image: linear-gradient(to bottom right, purple 33%, blue);
     box-shadow: 1rem inset grey;
 }
 #hobbies ol{
-    color: #E1E6E8;
+    color: black;
     font-size: 3rem;
     border-style: solid;
-    border-color: #E1E6E8;
+    border-color: skyblue;
     list-style-position: inside;
 }
 
+#hobbies ol li ul li ul{
+    color: purple;
+}
+
 #Gallery figure{
-    text-align: center;
-    border: .5rem solid white;
     align-content: center;
-    margin: 2rem;
+    text-align: center;
+    border: .5rem solid skyblue;
+    align-content: center;
+    margin: 3rem;
     padding: 2rem;
 }
 
 #Gallery figure:hover{
-    border: 1rem double burlywood;
+    border: 1rem double red;
+    box-shadow: 10px 10px grey;
+    color: ;
 }
 
 figcaption{
@@ -55,13 +62,34 @@ figcaption{
     font-size: 3rem;
 }
 
+#lit div{
+    border: .5rem solid black;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 5rem;
+    padding: 2rem;
+}
+
+#lit div::first-letter{
+    float: left;
+    font-size: 9rem;
+    line-height: 0.75;
+    margin: 0.1rem 0.1rem 0.1rem;
+    padding: 1rem;
+    color: blue;
+    text-shadow: 7px 7px 10px grey;
+}
+
 footer{
-    height: 3rem;
-    padding: 1.5rem;
+    background-color: yellow;
+    height: 5rem;
+    padding: 2.5rem;
     font-size: 3rem;
     border: 2px black solid;
-    text-align: center;
-    border-top-left-radius: 1rem;
-    border-bottom-right-radius: 1rem; 
+    text-align: center;    
+    border-bottom-right-radius: 10rem;
+    border-top-left-radius: 10rem;
+    box-shadow: 10px 10px grey;
+    margin-bottom: 3rem;
 }
 

@@ -2,14 +2,15 @@ h1, h2{
     font-family: "Aref Ruqaa Ink";
     color: blue;
     text-align: center;
+    text-underline-position: bottom;
 }
 
 h1{
-    font-size: 7rem;
+    font-size: 4rem;
 }
 
 h2{
-    font-size: 5rem;
+    font-size: 2rem;
 }
 
 body{
@@ -19,66 +20,61 @@ body{
     text-align: center;
     font-family: "Poppins";
     color: black;
-    font-size: 4rem;
+    font-size: 1.5rem;
 }
 
 #hero img{
-    border: skyblue solid 2rem;
-    border-radius: 100rem;
-    height: 50rem;
-    width: 50rem;
-    background-image: linear-gradient(to bottom right, purple 33%, blue);
+    border: skyblue solid 1rem;
+    border-radius: 50rem;
+    height: 25rem;
+    width: 25rem;
+    background-color: white;
+    background-image: url("../img/logo-96X96.svg");
     box-shadow: 1rem inset grey;
 }
 
 #hobbies ol{
     color: black;
-    font-size: 3rem;
+    font-size: 1rem;
     border-style: solid;
     border-color: skyblue;
     list-style-position: inside;
 }
 
-#hobbies ol li:hover{
-    font-size: 5rem;
-
-}
-
-#hobbies ol li ul li ul{
-    color: purple;
+#hobbies ol li ul li ul li:hover{
+    color: red;
 }
 
 #Gallery figure{
-    align-content: center;
     text-align: center;
     border: .5rem solid skyblue;
     align-content: center;
-    margin: 3rem;
-    padding: 2rem;
+    margin-bottom: 1rem;
+    padding: fit-content;
 }
 
 #Gallery figure:hover{
-    border: 1rem double darkorange;
+    border: .5rem double darkorange;
     box-shadow: 10px 10px grey;
     color: darkorange;
 }
 
 figcaption{
     text-align: center;
-    font-size: 3rem;
+    font-size: 1rem;
 }
 
 #lit div{
     border: .5rem solid black;
-    font-size: 3rem;
-    margin-bottom: 3rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
     border-radius: 5rem;
     padding: 2rem;
 }
 
 #lit div::first-letter{
     float: left;
-    font-size: 9rem;
+    font-size: 3rem;
     line-height: 0.75;
     margin: 0.1rem 0.1rem 0.1rem;
     padding: 1rem;
@@ -88,14 +84,14 @@ figcaption{
 
 footer{
     background-color: yellow;
-    height: 5rem;
-    padding: 2.5rem;
-    font-size: 3rem;
+    height: 1rem;
+    padding: .5rem;
+    font-size: 1rem;
     border: 2px black solid;
     text-align: center;    
     border-bottom-right-radius: 10rem;
     border-top-left-radius: 10rem;
-    box-shadow: 10px 10px grey;
-    margin-bottom: 3rem;
+    box-shadow: 5px 5px grey;
+    margin-bottom: 1rem;
 }
 

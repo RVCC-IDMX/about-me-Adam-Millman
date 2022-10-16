@@ -33,6 +33,12 @@ body{
     box-shadow: 1rem inset grey;
 }
 
+#hobbies{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #hobbies ol{
     color: black;
     font-size: 2rem;
@@ -45,12 +51,18 @@ body{
     color: red;
 }
 
+
+
 #Gallery figure{
     text-align: center;
     border: .5rem solid skyblue;
     align-content: center;
     margin-bottom: 1rem;
-    padding: fit-content;
+    padding: 1em;
+}
+
+#Gallery img{
+    max-width: 100%;
 }
 
 #Gallery figure:hover{
@@ -93,5 +105,22 @@ footer{
     border-top-left-radius: 10rem;
     box-shadow: 5px 5px grey;
     margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 60em) {
+    figure{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    figcaption{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        margin-left: .5rem;
+    }
+
+    
 }
 

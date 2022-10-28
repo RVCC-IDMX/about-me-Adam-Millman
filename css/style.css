@@ -1,9 +1,8 @@
 h1, h2{
-    border: black solid 5px;
     font-family: "Aref Ruqaa Ink";
     color: blue;
     text-align: center;
-    text-underline-position: bottom;
+    text-decoration: underline;
 }
 
 h1{
@@ -40,28 +39,31 @@ body{
 }
 
 #hobbies div{
+    border: skyblue solid 5px;
     display: flex;
-    flex-flow: column wrap;
     align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding: 25px;
+    margin: 25px;
 }
 
+#hobbies div p{
+    font-size: 1rem;
+}
 
 #hobbies ol{
     color: black;
     font-size: 2rem;
-    border-style: solid;
-    border-color: skyblue;
     list-style-position: inside;
+}
+
+#hobbies ol li ul li ul li a:visited{
+    color: black;
 }
 
 #hobbies ol li ul li ul li:hover{
     color: red;
-}
-
-
-#myVideo{
-    border: solid skyblue 5px;
-    box-shadow: 5px 5px lightgrey;
 }
 
 #Gallery figure{
@@ -124,6 +126,12 @@ footer{
 /*tablet*/
 
 @media screen and (min-width: 60em) {
+
+    #hobbies{
+        display: flex;
+        flex-direction: column;
+    }
+    
     figure{
         display: grid;
         grid-template-columns: 1fr 1fr;

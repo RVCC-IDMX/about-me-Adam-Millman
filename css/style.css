@@ -48,9 +48,6 @@ body{
     margin: 25px;
 }
 
-#hobbies div p{
-    font-size: 1rem;
-}
 
 #hobbies ol{
     color: black;
@@ -153,6 +150,12 @@ footer{
 
 /*Laptop*/
 @media screen and (min-width: 100em){
+
+    #hobbies{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
     #Gallery{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;

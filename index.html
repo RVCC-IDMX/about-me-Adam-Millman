@@ -127,6 +127,60 @@
 
         </article>
 
+        <section id="contact">
+
+            <h2>Contact Me:</h2>
+
+            <form id="contactForm" name="contactForm" method="post" data-netlify="true">
+
+                <fieldset>
+
+                    <legend>Contact Form</legend>
+
+                    <label for="name">Enter your name (required)</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Enter your email address (required)</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="tel">Phone (optional)</label>
+                    <input type="tel" id="phone" name="phone">
+
+                    <select id="phonetype" name="phonetype">
+                        <option value="">Select Phone Type</option>
+                        <option value="Work">Work</option>
+                        <option value="Home">Home</option>
+                        <option value="Mobile">Mobile</option>
+                    </select>
+
+                    <label for="message">Message (optional)</label>
+                    <textarea id="message" name= "message" rows="8">Comment!</textarea>
+
+                    <fieldset>
+
+                        <legend>Would you like a reply?</legend>
+
+                        <ul>
+                            <li>
+                                <input type="radio" name="reply" id="message-yes">
+                                <label for="message-yes">Yes, I would like a reply.</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="reply" id="message-no" checked>
+                                <label for="message-no">No, Thanks.</label>
+                            </li>
+                        </ul>
+
+                    </fieldset>
+
+                    <button type="submit">submit</button>
+
+                </fieldset>
+
+            </form>
+
+        </section>
+
     </main>
 
     <footer>

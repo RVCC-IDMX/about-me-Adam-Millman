@@ -1,8 +1,5 @@
-h1, h2{
+h1, h2, h3, h4{
     font-family: "Aref Ruqaa Ink";
-    color: blue;
-    text-align: center;
-    text-decoration: underline;
 }
 
 h1{
@@ -11,6 +8,9 @@ h1{
 
 h2{
     font-size: 2rem;
+    color: blue;
+    text-align: center;
+    text-decoration: underline;
 }
 
 body{

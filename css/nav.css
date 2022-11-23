@@ -39,6 +39,7 @@ main{
 .logo{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .logo img{
@@ -56,6 +57,7 @@ main{
     list-style: none;
     display: block;
     padding: 0.5em 0;
+    text-align: center;
 }
 
 

@@ -26,16 +26,16 @@ body{
 #hero img{
     border: skyblue solid 1rem;
     border-radius: 50rem;
-    height: 25rem;
-    width: 25rem;
+    height: 20rem;
+    width: 20rem;
     background-color: white;
     background-image: url("../img/logo-96X96.svg");
     box-shadow: 1rem inset grey;
 }
 
 #hobbies{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
 }
 
 #hobbies div{
@@ -48,6 +48,10 @@ body{
     margin: 25px;
 }
 
+iframe{
+    width: auto;
+    height: auto;
+}
 
 #hobbies ol{
     color: black;
@@ -176,8 +180,8 @@ footer{
 @media screen and (min-width: 60em) {
 
     #hobbies{
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
     
     figure{

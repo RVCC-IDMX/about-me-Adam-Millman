@@ -47,7 +47,7 @@ main{
 
 .menu{
     margin-right: .5rem;
-    
+    margin-top: .75rem;
     display: flex;
     justify-content: end;
     align-items: center;

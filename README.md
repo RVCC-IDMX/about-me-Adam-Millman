@@ -25,4 +25,4 @@ To Be added
 
 ## Licensing
 I, Adam Millman, do not grant permission to copy, sell and/ or distribute https://about-me-adam-millman.netlify.app/ for personal gains. It may be used as an exmaple or template to learn from so long as my name is never stripped from the footer and proper credit is given.
-&copy Adam Millman
+&copy; Adam Millman

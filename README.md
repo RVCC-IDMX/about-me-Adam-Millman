@@ -14,11 +14,11 @@ For the dark Blue on yellow I recieved a 8.04 which is pretty good.
 
 ### My Color Pallet
     Usage -           Color name               HEX         RGB
-Background color -    lightgoldenrodyellow   #fafad2   250, 250, 210 
-Majority text color - black                  #000000   0, 0, 0
-Header color -        blue                   #0000FF   0, 0, 255
-Border color -        skyblue                #87CEEB   135, 206, 235
-Subtext color -       darkslategrey          #2f4f4f   47, 79, 79
+    Background color -    lightgoldenrodyellow   #fafad2   250, 250, 210 
+    Majority text color - black                  #000000   0, 0, 0
+    Header color -        blue                   #0000FF   0, 0, 255
+    Border color -        skyblue                #87CEEB   135, 206, 235
+    Subtext color -       darkslategrey          #2f4f4f   47, 79, 79
 
 ## Sources
 To Be added

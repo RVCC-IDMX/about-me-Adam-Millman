@@ -10,3 +10,19 @@ I got a scrore of 5.12 which is readable.
 #### This is another example of color contrast on my website
 For the dark Blue on yellow I recieved a 8.04 which is pretty good.
 ![website-contrast-dark-blue](https://user-images.githubusercontent.com/94012533/206049157-a90050f5-a5be-4b1b-a97c-ffdd8f9398d5.png)
+
+
+### My Color Pallet
+    Usage -           Color name               HEX         RGB
+Background color -    lightgoldenrodyellow   #fafad2   250, 250, 210 
+Majority text color - black                  #000000   0, 0, 0
+Header color -        blue                   #0000FF   0, 0, 255
+Border color -        skyblue                #87CEEB   135, 206, 235
+Subtext color -       darkslategrey          #2f4f4f   47, 79, 79
+
+## Sources
+To Be added
+
+## Licensing
+I, Adam Millman, do not grant permission to copy, sell and/ or distribute https://about-me-adam-millman.netlify.app/ for personal gains. It may be used as an exmaple or template to learn from so long as my name is never stripped from the footer and proper credit is given.
+&copy Adam Millman

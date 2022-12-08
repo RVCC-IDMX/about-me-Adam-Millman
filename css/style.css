@@ -117,6 +117,10 @@ figcaption{
     justify-content: center;
 }
 
+#lit img{
+    width: 100%;
+}
+
 #lit div:first-letter{
     float: left;
     font-size: 3rem;

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 </head>
@@ -35,8 +36,8 @@
 
                 <input type="checkbox" id="nav__checkbox" class="nav__checkbox">
                 <label for="nav__checkbox" class="nav__toggle">
-                    <img class= "menu" src="img/hamburger-icon.svg" alt="hamburger icon" width="75px" height="75px">
-                    <img class= "close" src="img/close-icon.svg" alt="close icon" width="75px" height="75px">
+                    <img class= "menu" src="img/hamburger-icon.svg" alt="hamburger icon" width="35px" height="35px">
+                    <img class= "close" src="img/close-icon.svg" alt="close icon" width="35px" height="35px">
                 </label>
 
                 <div class="navbar-links">
@@ -66,11 +67,21 @@
 
         </section>
 
+        <section id="bio">
+
+            <h2>Bio</h2>
+
+            <p>Hello, I am currently persuing a degree in information systems and technology mjaor at </p>
+
+        </section>
+
+        <!--Hobbies section-->
+
         <section id="hobbies">
 
             <div>
 
-                <h2>Hobbies</h2>
+                <h2>hobbies</h2>
 
                 <ol type="I">
                     <li>Rock Climb</li>
@@ -104,6 +115,8 @@
 
         </section>
 
+        <!--Image Gallery-->
+
         <section id="gallery">
 
             <h2>Photo Gallery</h2>
@@ -131,25 +144,32 @@
 
         </section>
 
+        <!--Blog article on image hover-->
         <article id ="lit">
 
-            <h2>An Excerpt from Sherlock Holmes</h2>
+            <h2>Adding an Image Hover</h2>
 
             <div>
+                <p>If you took a look at the image gallery above, you most likely would have noticed that there was a slight effect when hovering over the images. The border changed color, style, and there was a shadow added. Not only that but the font changed colors and the photo becomes somewhat opaque. This was a relatively easy feature to implement into the site. Below is a snippet of code that shows what the structure of the image looks like for the image gallery.</p>
 
-                <p>You see, Watson, he explained in the early hours of the morning as we sat over a glass of whisky and soda in Baker Street, "it was perfectly obvious from the first that the only possible object of this rather fantastic business of the advertisement of the League, and the copying of the 'Encyclopaedia,' must be to get this not over-bright pawnbroker out of the way for a number of hours every day. It was a curious way of managing it, but, really, it would be difficult to suggest a better. The method was no doubt suggested to Clay's ingenious mind by the colour of his accomplice's hair. The 4 pounds a week was a lure which must draw him, and what was it to them, who were playing for thousands? They put in the advertisement, one rogue has the temporary office, the other rogue incites the man to apply for it, and together they manage to secure his absence every morning in the week. From the time that I heard of the assistant having come for half wages, it was obvious to me that he had some strong motive for securing the situation."</p>
+                <img src="img/image-hover-html.png" alt="Image html structure">
 
-                <p>"But how could you guess what the motive was?"</p>
+                <p>As you can see above, there are different tags that are allowed to be used when making an image. Encompassing the entire image and caption is a figure tag, in side that tag is an image tag as well as a figcaption tag. The figure tag is used to hold the figure together. It kind of acts like a div tag when used in this sense. The image tag is simply just the image to be displayed on the site. Following that is the figcatpion; the caption for the image. Now that the formatting of the gallery figures is out of the way we can get to how the actual hover effect works. There is another snippet of code attached below that shows what the style of the gallery images will look like before the hover effect.</p>
 
-                <p>"Had there been women in the house, I should have suspected a mere vulgar intrigue. That, however, was out of the question. The man's business was a small one, and there was nothing in his house which could account for such elaborate preparations, and such an expenditure as they were at. It must, then, be something out of the house. What could it be? I thought of the assistant's fondness for photography, and his trick of vanishing into the cellar. The cellar! There was the end of this tangled clue. Then I made inquiries as to this mysterious assistant and found that I had to deal with one of the coolest and most daring criminals in London. He was doing something in the cellar--something which took many hours a day for months on end. What could it be, once more? I could think of nothing save that he was running a tunnel to some other building.</p>
+                <img src="img/gallery-before-hover.png" alt="Image gallery style before the hover effect">
 
-                <p>"So far I had got when we went to visit the scene of action. I surprised you by beating upon the pavement with my stick. I was ascertaining whether the cellar stretched out in front or behind. It was not in front. Then I rang the bell, and, as I hoped, the assistant answered it. We have had some skirmishes, but we had never set eyes upon each other before. I hardly looked at his face. His knees were what I wished to see. You must yourself have remarked how worn, wrinkled, and stained they were. They spoke of those hours of burrowing. The only remaining point was what they were burrowing for. I walked round the corner, saw the City and Suburban Bank abutted on our friend's premises, and felt that I had solved my problem. When you drove home after the concert I called upon Scotland Yard and upon the chairman of the bank directors, with the result that you have seen."</p>
+                <p>If you want to show a change from one state to another there obviously has to be an original state for that object. In this case there is an original border style and color, as well as a text color. In the css code, you can see that there is an original border style of solid and that it is also sky blue. The original font color is a dark slate grey. All these styling choices were based off what the website looked like previously. But I wanted to change that up when someone hovered over an image. I wanted the images to stand out, and change subtly. This is where the hover effect comes into play, I got to play around with many different things when I wanted to have an image hover effect. I did not want to take away from the pictures themselves but merely emphasize the one you were looking at in particular. Below is the snippet of code that allowed me to change the states when hovering over an image.</p>
 
-                <p>"And how could you tell that they would make their attempt to-night?" I asked.</p>
+                <img src="img/image-hover-css.png" alt="Image gallery hover css styling">
 
+                <p>As you can see from the code above, I change some minor things when the image is hovered over. First off to get the effect of something when it is hovered over, you need to make sure that that even is listened for. In order to do that you need to put the specific element you want the user to hover over colon hover. This is what you see in yellow at the top of the code. Inside those brackets will execute when the user hovers over that element in particular. As you can see I put a hover effect on the entire figure, this includes the image and the caption as stated in the first paragraph. Once the user hovers over any part of the figure element, the opacity will change slightly. This adds a nice emphasis on the figure being hovered over. The next change that occurs is the border, instead of it being one solid border, it is now two separate lines, and it changes to the color orange. Then I put a box shadow around the border to make the figure pop off the page. Lastly, I changed the font color to dark orange to make it change completely. Now that you have read this entire blog on how the hover effect works on the image gallery, why don’t you go back up and try it for yourself. Try to think of everything that is going on when you hover over the image. Don’t just try to hover over the image itself, hover over the image caption or maybe just the border itself. What happens?</p>
+
+                <p id="hover_example">Hover over me!</p>
             </div>
 
         </article>
+
+        <!--Contact form Section-->
 
         <section id="contact">
 
@@ -212,8 +232,12 @@
 
     </main>
 
+    <!--Footer-->
+
     <footer>
         &copy; Adam Millman
+        <a href="https://github.com/Adam-Millman"><i class="fa fa-github"></a></i>
+        <br><a href="https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-github">github image source</a></p>
     </footer>
 </body>
 </html>

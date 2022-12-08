@@ -26,7 +26,6 @@ body{
     font-size: 1.5rem;
 }
 
-
 #hero img{
     border: skyblue solid 1rem;
     border-radius: 50rem;
@@ -37,7 +36,17 @@ body{
     box-shadow: 1rem inset grey;
 }
 
-/* styling and formatting hobbies section */
+/* styling and formatting hobbies and bio section */
+
+#bio{
+    border: skyblue solid 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding: 25px;
+    margin: 25px;
+}
 
 #hobbies{
     display: flex;

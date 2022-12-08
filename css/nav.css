@@ -51,8 +51,7 @@ main{
 
 /* formatting hamburger icon */
 .menu{
-    margin-right: .5rem;
-    margin-top: 2rem;
+    margin: 2rem 1rem 0rem 0rem;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -71,7 +70,7 @@ main{
 /*displaying the close icon when hamburger is toggled */
 
 #nav__checkbox:checked ~ label.nav__toggle .close{
-    margin-right: .5rem;
+    margin-right: 1rem;
     margin-top: 2rem;
     display: block;
 }

@@ -70,6 +70,7 @@ iframe{
 
 #gallery figure{
     text-align: center;
+    color: darkslategray;
     border: .5rem solid skyblue;
     align-content: center;
     margin-bottom: 1rem;
@@ -93,12 +94,13 @@ figcaption{
 }
 
 #lit div{
-    border: .5rem solid black;
+    border: .5rem solid skyblue;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     border-radius: 5rem;
     padding: 2rem;
     max-width: 100%;
+    justify-content: center;
 }
 
 #lit div:first-letter{
@@ -109,6 +111,23 @@ figcaption{
     padding: 1rem;
     color: blue;
     text-shadow: 7px 7px 10px grey;
+}
+
+#hover_example{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: darkslategray;
+    border: .5rem solid skyblue;
+    width: 100px;
+    height: 100px;
+}
+
+#hover_example:hover{
+    opacity: 85%;
+    border: .5rem double darkorange;
+    box-shadow: 10px 10px grey;
+    color: darkorange;
 }
 
 #formElements{
@@ -162,7 +181,8 @@ legend{
 }
 
 footer{
-    background-color: yellow;
+    background-color: skyblue;
+    color: darkslategray;
     height: 1rem;
     padding: .5rem;
     font-size: 1rem;

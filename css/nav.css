@@ -34,6 +34,8 @@ main{
     padding: 1rem;
 }
 
+/* hamburger toggle */
+
 .nav__toggle{
     position: absolute;
     cursor: pointer;
@@ -41,31 +43,40 @@ main{
     right: 0;
 }
 
+/* hide close icon to begin*/
+
 .close{
     display: none;
 }
 
+/* formatting hamburger icon */
 .menu{
     margin-right: .5rem;
-    margin-top: .75rem;
+    margin-top: 2rem;
     display: flex;
     justify-content: end;
     align-items: center;
 }
 
+/* getting rid of the check box */
 .nav__checkbox{
     display: none;
 }
 
-
+/* showing the nav bar links on checked hamburger icon */
 #nav__checkbox:checked ~ .navbar-links li{
     display: block;
 }
 
+/*displaying the close icon when hamburger is toggled */
+
 #nav__checkbox:checked ~ label.nav__toggle .close{
+    margin-right: .5rem;
+    margin-top: 2rem;
     display: block;
 }
 
+/*hiding the hamburger icon when it is checked */
 #nav__checkbox:checked ~ label.nav__toggle .menu{
     display: none;
 }

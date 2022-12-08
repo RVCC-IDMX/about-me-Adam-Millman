@@ -21,7 +21,7 @@ For the dark Blue on yellow I recieved a 8.04 which is pretty good.
     Subtext color -       darkslategrey          #2f4f4f   47, 79, 79
 
 ## Sources
-To Be added
+[github image source](https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-github)
 
 ## Licensing
 I, Adam Millman, do not grant permission to copy, sell and/ or distribute https://about-me-adam-millman.netlify.app/ for personal gains. It may be used as an exmaple or template to learn from so long as my name is never stripped from the footer and proper credit is given.

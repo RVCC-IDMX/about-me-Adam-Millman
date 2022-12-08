@@ -39,6 +39,7 @@ body{
 /* styling and formatting hobbies and bio section */
 
 #bio{
+    font-size: 1.5rem;
     border: skyblue solid 5px;
     display: flex;
     align-items: center;

@@ -129,8 +129,7 @@ figcaption{
 }
 
 #lit img{
-/*
-    height: 100%;*/ /* THIS IS THE #$%^&^%$ CULPRIT! */
+    /*height: 100%; /* THIS IS THE #$%^&^%$ CULPRIT! */
     width: 100%;
     
 }

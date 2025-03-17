@@ -15,7 +15,7 @@ h2{
 }
 
 body{
-    background-color: lightgoldenrodyellow;
+    background-color: #202c39;
 }
 
 /* Styling hero section */
@@ -23,12 +23,12 @@ body{
 #hero{
     text-align: center;
     font-family: "Poppins";
-    color: black;
+    color: #f1f7ed;
     font-size: 1.5rem;
 }
 
 #hero img{
-    border: skyblue solid 1rem;
+    border: #788AA3 solid .25rem;
     border-radius: 50rem;
     height: 20rem;
     width: 20rem;

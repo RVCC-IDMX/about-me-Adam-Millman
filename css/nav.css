@@ -3,7 +3,7 @@
     --discord-dark: #36393F;
     --discord-darker: #2F3136;
     --discord-light: #40444B;
-    --discord-blurple: #5865F2;
+    --discord-blurple: #1DB954;
     --discord-text: #DCDDDE;
     --discord-text-secondary: #B9BBBE;
     --transparent-bg: rgba(64, 68, 75, 0.6);
@@ -28,12 +28,12 @@ h1, h2, h3, h4 {
 
 h1 {
     font-size: 4rem;
-    color: #1DB954;
+    color: #DCDDDE;
 }
 
 h2 {
     font-size: 2rem;
-    color: #17A84F;
+    color: #DCDDDE;
     text-align: center;
     text-decoration: underline;
 }

@@ -1,290 +1,333 @@
-
-h1, h2, h3, h4{
-    font-family: "Aref Ruqaa Ink";
+/* Base styles */
+:root {
+    --discord-dark: #36393F;
+    --discord-darker: #2F3136;
+    --discord-light: #40444B;
+    --discord-blurple: #5865F2;
+    --discord-text: #DCDDDE;
+    --discord-text-secondary: #B9BBBE;
+    --transparent-bg: rgba(64, 68, 75, 0.6);
 }
 
-h1{
-    font-size: 4rem;
+body {
+    background-color: var(--discord-dark);
+    color: var(--discord-text);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
-h2{
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--discord-text);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+h2 {
     font-size: 2rem;
-    color: blue;
     text-align: center;
-    text-decoration: underline;
+    margin-bottom: 2rem;
+    position: relative;
 }
 
-body{
-    background-color: #202c39;
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--discord-blurple);
 }
 
-/* Styling hero section */
-
-#hero{
-    text-align: center;
-    font-family: "Poppins";
-    color: #f1f7ed;
-    font-size: 1.5rem;
-}
-
-#hero img{
-    border: #788AA3 solid .25rem;
-    border-radius: 50rem;
-    height: 20rem;
-    width: 20rem;
-    background-color: white;
-    background-image: url("../img/logo-96X96.svg");
-    box-shadow: 1rem inset grey;
-}
-
-/* styling and formatting hobbies and bio section */
-
-#bio{
-    font-size: 1.5rem;
-    border: skyblue solid 5px;
+/* Hero section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/selfi.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-flow: column;
-    padding: 25px;
-    margin: 25px;
+    padding: 2rem;
 }
 
-#hobbies{
+.bio-container {
+    background: var(--transparent-bg);
+    padding: 2.5rem;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    max-width: 800px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bio-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--discord-blurple);
+    box-shadow: 0 0 20px rgba(88, 101, 242, 0.3);
+}
+
+.bio-text {
+    flex: 1;
+}
+
+.bio-text p {
+    color: var(--discord-text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Hobbies section */
+#hobbies {
+    padding: 4rem 2rem;
+    background-color: var(--discord-darker);
+}
+
+#hobbies ol {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#hobbies ol li {
+    background: var(--transparent-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#hobbies ol li:hover {
+    transform: translateY(-5px);
+    background: rgba(88, 101, 242, 0.1);
+    border-color: var(--discord-blurple);
+}
+
+/* Skills section */
+#skills {
+    padding: 4rem 2rem;
+    background-color: var(--discord-darker);
+    overflow: hidden;
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.skills-scroll {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    animation: scroll 20s linear infinite;
+    will-change: transform;
+}
+
+.skills-scroll:hover {
+    animation-play-state: paused;
+}
+
+.skill-item {
     display: flex;
     flex-direction: column;
-}
-
-
-#hobbies div{
-    border: skyblue solid 5px;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    flex-flow: column;
-    padding: 25px;
-    margin: 25px;
+    background: var(--transparent-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    min-width: 120px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
-/* styling and formatting iframe */
-
-iframe{
-    width: 100%;
-    height: 100%;
+.skill-item:hover {
+    transform: translateY(-5px);
+    background: rgba(88, 101, 242, 0.1);
 }
 
-/* Hobbies formatting and styling */
-
-#hobbies ol{
-    color: black;
-    font-size: 2rem;
-    list-style-position: inside;
-}
-
-#hobbies ol li ul li ul li a:visited{
-    color: black;
-}
-
-#hobbies ol li ul li ul li:hover{
-    color: red;
-}
-
-/* Image gallery styling and formatting */
-
-#gallery figure{
-    text-align: center;
-    color: darkslategray;
-    border: .5rem solid skyblue;
-    align-content: center;
+.skill-item img {
+    width: 48px;
+    height: 48px;
     margin-bottom: 1rem;
-    padding: 1em;
+    filter: grayscale(100%) brightness(0) invert(1);
+    transition: all 0.3s ease;
 }
 
-#gallery img{
-    max-width: 100%;
+.skill-item:hover img {
+    filter: none;
+    transform: scale(1.1);
 }
 
-#gallery figure:hover{
-    opacity: 85%;
-    border: .5rem double darkorange;
-    box-shadow: 10px 10px grey;
-    color: darkorange;
-}
-
-figcaption{
+.skill-item span {
+    color: var(--discord-text-secondary);
+    font-size: 0.9rem;
     text-align: center;
-    font-size: 2rem;
 }
 
-/* Blog formatting and styling */
-
-#lit div{
-    border: .5rem solid skyblue;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 5rem;
-    padding: 2rem;
-    max-width: 100%;
-    justify-content: center;
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-120px * 11));
+    }
 }
 
-#lit img{
-    /*height: 100%; /* THIS IS THE #$%^&^%$ CULPRIT! */
-    width: 100%;
-    
+/* Gallery section */
+#gallery {
+    padding: 4rem 2rem;
+    background-color: var(--discord-dark);
 }
 
-#lit div:first-letter{
-    float: left;
-    font-size: 3rem;
-    line-height: 0.75;
-    margin: 0.1rem 0.1rem 0.1rem;
-    padding: 1rem;
-    color: blue;
-    text-shadow: 7px 7px 10px grey;
-}
-
-#hover_example{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: darkslategray;
-    border: .5rem solid skyblue;
-    width: 100px;
-    height: 100px;
-}
-
-#hover_example:hover{
-    opacity: 85%;
-    border: .5rem double darkorange;
-    box-shadow: 10px 10px grey;
-    color: darkorange;
-}
-
-/* contact form styling */
-
-#formElements{
+.gallery-container {
     display: grid;
-    row-gap: .5em;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-#contact{
-    padding: 1rem;
-    max-width: 600px;
-    margin: 2rem auto;
+.gallery-container figure {
+    background: var(--transparent-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
-fieldset{
-    border: 2px solid skyblue;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    border-radius: 1rem 1rem;
+.gallery-container figure:hover {
+    transform: translateY(-5px);
 }
 
-legend{
-    background-color: skyblue;
-    border: solid 2px skyblue;
-    border-radius: .25em .25em;
-    color: white;
-    padding: .5em;
-}
-
-#contact input, #contact textarea, #contact select, #contact button{
-    font-size: 1rem;
-    padding: .5em;
-    border: skyblue 2px solid;
-    border-radius: 1rem 1rem;
-}
-
-#contact ul{
-    list-style: none;
-    padding: 0px;
-}
-
-#contact li{
-    margin: 1rem;
-}
-
-#contact button{
-    background-color: skyblue;
-    color: white;
-    border: 1px solid lightblue;
-    max-width: 400px;
-    width: 50%;
-}
-
-/*footer styling */
-
-footer{
-    background-color: skyblue;
-    color: darkslategray;
-    height: 40px;
-    padding: .5rem;
-    font-size: 1rem;
-    border: 2px black solid;
-    text-align: center;    
-    border-bottom-right-radius: 10rem;
-    border-top-left-radius: 10rem;
-    box-shadow: 5px 5px grey;
+.gallery-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
     margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-footer a:visited{
-    color: darkslategray;
+figcaption {
+    color: var(--discord-text-secondary);
+    font-size: 1.1rem;
+    text-align: center;
 }
 
-/*tablet*/
+/* Contact section */
+#contact {
+    padding: 4rem 2rem;
+    background-color: var(--discord-darker);
+}
 
-@media screen and (min-width: 60em) {
+#contactForm {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--transparent-bg);
+    padding: 2.5rem;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
 
-    #hobbies{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+#contactForm label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--discord-text);
+    font-weight: 500;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 8px;
+    color: var(--discord-text);
+    transition: all 0.3s ease;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(88, 101, 242, 0.2);
+}
+
+#contactForm button {
+    background: var(--discord-blurple);
+    color: var(--discord-text);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-weight: 600;
+}
+
+#contactForm button:hover {
+    background: #4752C4;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background: var(--discord-darker);
+    color: var(--discord-text-secondary);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .bio-container {
+        flex-direction: column;
+        text-align: center;
     }
     
-    figure{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    .bio-img {
+        width: 150px;
+        height: 150px;
     }
-
-    figcaption{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
-        margin: auto;
+    
+    h1 {
+        font-size: 2.5rem;
     }
-
-    #lit div{
-        max-width: 100%;
-        columns: 20rem;
+    
+    h2 {
+        font-size: 1.8rem;
     }
-}
-
-/*Laptop*/
-@media screen and (min-width: 100em){
-
-    #hobbies{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    
+    .skills-scroll {
+        gap: 1rem;
     }
-
-    #gallery{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+    
+    .skill-item {
+        min-width: 100px;
+        padding: 1rem;
     }
-
-    #gallery hr{
-        display: none;
+    
+    .skill-item img {
+        width: 36px;
+        height: 36px;
     }
-
-    #gallery h2{
-        grid-column: 1/-1;
-    }
-
-    figure{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    } 
 }

@@ -1,158 +1,223 @@
-/* make scrolling smooth */
+/* Base styles */
+:root {
+    --discord-dark: #36393F;
+    --discord-darker: #2F3136;
+    --discord-light: #40444B;
+    --discord-blurple: #5865F2;
+    --discord-text: #DCDDDE;
+    --discord-text-secondary: #B9BBBE;
+    --transparent-bg: rgba(64, 68, 75, 0.6);
+}
 
-html{
+/* Smooth scrolling */
+html {
     scroll-behavior: smooth;
 }
 
-/* 
- get rid of padding & sizing on body so
- header is at top
-*/
+/* Base styling */
+body {
+    background-color: #121212;
+    color: #f4f4f4;
+    font-family: 'Montserrat', sans-serif;
+}
 
-body{
-    box-sizing: border-box;
-    padding: 0;
+/* Heading styles */
+h1, h2, h3, h4 {
+    font-family: 'Lora', serif;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #1DB954;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #17A84F;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* Hero section */
+#hero {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    margin-top: 50px;
+}
+
+#hero img {
+    border: 6px solid #1DB954;
+    border-radius: 50%;
+    height: 220px;
+    width: 220px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+#hero img:hover {
+    transform: scale(1.1);
+}
+
+/* Bio section */
+#bio {
+    font-size: 1.5rem;
+    border: 4px solid #1DB954;
+    padding: 25px;
+    margin: 25px;
+    text-align: center;
+}
+
+/* Gallery */
+#gallery figure {
+    text-align: center;
+    border: 3px solid #17A84F;
+    margin-bottom: 1rem;
+    padding: 1em;
+    transition: transform 0.3s ease-in-out;
+}
+
+#gallery img {
+    max-width: 100%;
+}
+
+#gallery figure:hover {
+    opacity: 85%;
+    transform: scale(1.05);
+}
+
+/* Contact Form */
+#contact {
+    padding: 1rem;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+input, textarea, select, button {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+}
+
+button {
+    background-color: #1DB954;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #17A84F;
+}
+
+/* Footer */
+footer {
+    background: #1DB954;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--transparent-bg);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar .logo img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.navbar .logo img:hover {
+    transform: scale(1.1);
+}
+
+.navbar .logo h1 {
+    color: var(--discord-text);
+    font-size: 1.5rem;
+    font-weight: 600;
     margin: 0;
 }
 
-
-/* add some padding back to rest of page */
-
-main{
-    padding: 2vw;
-}
-
-/* navbar */
-
-.navbar{
-    background-color: #788aa3;
-    color: #f1f7ed;
+.nav-links {
     display: flex;
-    flex-direction: column;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    padding: 1rem;
-}
-
-/* hamburger toggle */
-
-.nav__toggle{
-    position: absolute;
-    cursor: pointer;
-    margin: 0rem, 1rem;
-    right: 0;
-}
-
-/* hide close icon to begin*/
-
-.close{
-    display: none;
-}
-
-/* formatting hamburger icon */
-.menu{
-    margin: 2rem 1rem 0rem 0rem;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-}
-
-/* getting rid of the check box */
-.nav__checkbox{
-    display: none;
-}
-
-/* showing the nav bar links on checked hamburger icon */
-#nav__checkbox:checked ~ .navbar-links li{
-    display: block;
-}
-
-/*displaying the close icon when hamburger is toggled */
-
-#nav__checkbox:checked ~ label.nav__toggle .close{
-    margin-right: 1rem;
-    margin-top: 2rem;
-    display: block;
-}
-
-/*hiding the hamburger icon when it is checked */
-#nav__checkbox:checked ~ label.nav__toggle .menu{
-    display: none;
-}
-/* logo */
-
-.logo{
-    display: flex;
-    align-items: center;
-    justify-content: start;
-}
-
-.logo img{
-    width: 7vw;
-    height: 7vw;
-}
-
-.logo h1{
-    font-size: 1.2em;
-}
-
-/* navigation list */
-
-.navbar-links li{
+    gap: 2rem;
     list-style: none;
-    padding: 0.5em 0;
-    text-align: center;
-    display: none;
+    margin: 0;
+    padding: 0;
 }
 
-
-/*  
- style all a tags in header 
- and then on hover
-*/
-
-.navbar-links a{
-    color: #f1f7ed;
-    background-attachment: skyblue;
-    font-size: 1.5rem;
-    padding: 1rem 1.25rem;
-    letter-spacing: 2px;
+.nav-links a {
+    color: var(--discord-text-secondary);
     text-decoration: none;
-    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-
-.navbar-links a:hover,
-.navbar-links a:focus{
-    background-color: #283845;
-    color: #89043d;
-    border-radius: 10px;
-    outline: none;
+.nav-links a:hover {
+    color: var(--discord-text);
+    background: rgba(88, 101, 242, 0.1);
 }
 
-/* 
-media query for non-mobile nav bar
-min-width set to width of nav elements 
-such that no text wraps 
-*/
+.nav-links a.active {
+    color: var(--discord-text);
+    background: var(--discord-blurple);
+}
 
-@media screen and (min-width: 60rem) {
-    .navbar{
-        flex-direction: row;
-        justify-content: space-between;
+/* Add padding to main content to account for fixed navbar */
+main {
+    padding-top: 80px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
     }
-
-    .nav__toggle{
-        display: none;
+    
+    .nav-links {
+        gap: 1rem;
     }
-
-    .navbar-links li{
-        display: block;
+    
+    .nav-links a {
+        padding: 0.5rem;
+        font-size: 0.9rem;
     }
+    
+    .navbar .logo h1 {
+        font-size: 1.2rem;
+    }
+}
 
-    .navbar ul{
-        display: block;
-        display: flex;
-        justify-content: space-between;
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        width: 100%;
+        justify-content: center;
     }
 }

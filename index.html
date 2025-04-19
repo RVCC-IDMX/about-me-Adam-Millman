@@ -4,238 +4,192 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <link rel="shortcut icon" type="x-icon" hef="img/AM Logo.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@700&family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <title>About Me : Adam Millman</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
-    
-    <!--The Header of my document-->
-    <header>
 
-        <section>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/AM Logo.svg" alt="My initials as a logo">
+            <h1>About Me</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#bio">Bio</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#lit">Blog</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+    </nav>
+</header>
 
-            <nav class="navbar">
+<main>
 
-                <div class="logo">    
+    <section class="hero">
+        <div class="bio-container">
+            <img src="img/selfie.JPG" alt="My headshot" class="bio-img">
+            <div class="bio-text">
+                <h2>Adam Millman</h2>
+                <p>Information Systems & Technology student with a passion for creativity and problem-solving.</p>
+            </div>
+        </div>
+    </section>
 
-                    <img src="img/AM Logo.svg" alt="My initials as a a logo">
-                    <h1><u>About Me</u></h1>
-
+    <section id="skills">
+        <h2>Skills & Technologies</h2>
+        <div class="skills-container">
+            <div class="skills-scroll">
+                <!-- First set of skills -->
+                <div class="skill-item">
+                    <img src="img/icons/vscode.svg" alt="VS Code">
+                    <span>VS Code</span>
                 </div>
-
-
-                <input type="checkbox" id="nav__checkbox" class="nav__checkbox">
-                <label for="nav__checkbox" class="nav__toggle">
-                    <img class= "menu" src="img/hamburger-icon.svg" alt="hamburger icon" width="35px" height="35px">
-                    <img class= "close" src="img/close-icon.svg" alt="close icon" width="35px" height="35px">
-                </label>
-
-                <div class="navbar-links">
-                    <ul>
-                        <li><a href="About.html">About Me</a></li>
-                        <li><a href="Projects.html">Projects</a></li>
-                        <li><a href="Contact.html">Contact Me</a></li>
-                    </ul>
+                <div class="skill-item">
+                    <img src="img/icons/github.svg" alt="GitHub">
+                    <span>GitHub</span>
                 </div>
-            </nav>
-        </section>
-
-    </header>
-
-    <!--The main hold all of the mian content-->
-    <main>
-
-        <section id="hero">
-
-            <img src="img/chicago.jpg" alt="Professsional heashot">
-
-            <p>
-                Adam Millman<br>
-                Branchburg, NJ
-            </p>
-
-        </section>
-
-        <section id="bio">
-
-            <h2>Bio</h2>
-
-            <p>Hello, I am currently pursuing a degree in information systems and technology at Raritan Valley Community College. I have hopes to transfer to University of Colorado Boulder in the fall of 2023 to further my education. There I will continue for a degree in creative technology and design. I made this website as a semester long project in my IDM 225 class. This was a really fun project that allowed me to go above and beyond and show my artistic creativity. There were a lot of different parts of the project that really refined my web development skills and opened my eyes to a whole new world of coding I have never ventured into before. I loved the freedom that I had on this project and how open the professor was to any new ideas that I had to add to the website.</p>
-
-        </section>
-
-        <!--Hobbies section-->
-
-        <section id="hobbies">
-
-            <div>
-
-                <h2>hobbies</h2>
-
-                <ol type="I">
-                    <li>Rock Climb</li>
-                    <li>Ski
-                        <ul>
-                            <li>I have been to...
-                                <ul>
-                                    <li><a href= "https://mountaincreek.com/Mountain">Mountain Creek</a></li>
-                                    <li><a href= "https://www.huntermtn.com/">Hunter Mountain</a></li>
-                                    <li><a href= "https://www.okemo.com/" >Okemo</a></li>
-                                    <li><a href= "https://www.mountsnow.com/">Mount Snow</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>Hangout with friends</li>
-                    <li>Play video games</li>
-                </ol>
-
+                <div class="skill-item">
+                    <img src="img/icons/blender.svg" alt="Blender">
+                    <span>Blender</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/adobe cloud.svg" alt="Adobe Creative Cloud">
+                    <span>Adobe CC</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/sketchup.svg" alt="SketchUp">
+                    <span>SketchUp</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/html.svg" alt="HTML5">
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/css.svg" alt="CSS3">
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/python.svg" alt="Python">
+                    <span>Python</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/cpp.svg" alt="C++">
+                    <span>C++</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/java.svg" alt="Java">
+                    <span>Java</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/unity.svg" alt="Unity">
+                    <span>Unity</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/arduino.svg" alt="Arduino">
+                    <span>Arduino</span>
+                </div>
+                <!-- Duplicate set of skills for seamless scroll -->
+                <div class="skill-item">
+                    <img src="img/icons/vscode.svg" alt="VS Code">
+                    <span>VS Code</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/github.svg" alt="GitHub">
+                    <span>GitHub</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/blender.svg" alt="Blender">
+                    <span>Blender</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/adobe cloud.svg" alt="Adobe Creative Cloud">
+                    <span>Adobe CC</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/sketchup.svg" alt="SketchUp">
+                    <span>SketchUp</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/html.svg" alt="HTML5">
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/css.svg" alt="CSS3">
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/python.svg" alt="Python">
+                    <span>Python</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/cpp.svg" alt="C++">
+                    <span>C++</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/java.svg" alt="Java">
+                    <span>Java</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/unity.svg" alt="Unity">
+                    <span>Unity</span>
+                </div>
+                <div class="skill-item">
+                    <img src="img/icons/arduino.svg" alt="Arduino">
+                    <span>Arduino</span>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div id="video">
+    <section id="hobbies">
+        <h2>Hobbies</h2>
+        <ol>
+            <li>Rock Climbing</li>
+            <li>Skiing</li>
+            <li>Hanging out with friends</li>
+            <li>Playing video games</li>
+        </ol>
+    </section>
 
-                <h2>A Short Video</h2>
-
-                <iframe id= "myVideo" width="560" height="315" src="https://www.youtube.com/embed/ntnFJ6ygXKk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    
-                <h3>This video is proof of life</h3>
-
-            </div>
-
-        </section>
-
-        <!--Image Gallery-->
-
-        <section id="gallery">
-
-            <h2>Photo Gallery</h2>
-
-            <hr>
-
+    <section id="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="gallery-container">
             <figure>
-                <img src="img/skiing-640w.JPG" alt = "Sitting on the ski lift">
-                <figcaption>Hanging out on the ski lift.</figcaption>
+                <img src="img/skiing-640w.JPG" alt="Sitting on the ski lift">
+                <figcaption>Enjoying a ski day.</figcaption>
             </figure>
-
-            <hr>
-
             <figure>
-                <img src="img/climbing-640w.jpg" alt="Me rock climbing">
-                <figcaption>Me rock climbing in New York:)</figcaption>
+                <img src="img/climbing-640w.jpg" alt="Rock Climbing">
+                <figcaption>Climbing outdoors!</figcaption>
             </figure>
+        </div>
+    </section>
 
-            <hr>
-            
-            <figure>
-                <img src="img/friends-640w.jpg" alt="Me and a couple of friends">
-                <figcaption>Chilling at a music festival!</figcaption>
-            </figure>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
 
-        </section>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
 
-        <!--Blog article on image hover-->
-        <article id ="lit">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5"></textarea>
 
-            <h2>Adding an Image Hover</h2>
+            <button type="submit">Send</button>
+        </form>
+    </section>
 
-            <div>
-                <p>If you took a look at the image gallery above, you most likely would have noticed that there was a slight effect when hovering over the images. The border changed color, style, and there was a shadow added. Not only that but the font changed colors and the photo becomes somewhat opaque. This was a relatively easy feature to implement into the site. Below is a snippet of code that shows what the structure of the image looks like for the image gallery.</p>
+</main>
 
-                <img src="img/image-hover-html.png" alt="Image html structure">
+<footer>
+    <p>&copy; 2025 Adam Millman</p>
+</footer>
 
-                <p>As you can see above, there are different tags that are allowed to be used when making an image. Encompassing the entire image and caption is a figure tag, in side that tag is an image tag as well as a figcaption tag. The figure tag is used to hold the figure together. It kind of acts like a div tag when used in this sense. The image tag is simply just the image to be displayed on the site. Following that is the figcatpion; the caption for the image. Now that the formatting of the gallery figures is out of the way we can get to how the actual hover effect works. There is another snippet of code attached below that shows what the style of the gallery images will look like before the hover effect.</p>
-
-                <img src="img/gallery-before-hover.png" alt="Image gallery style before the hover effect">
-
-                <p>If you want to show a change from one state to another there obviously has to be an original state for that object. In this case there is an original border style and color, as well as a text color. In the css code, you can see that there is an original border style of solid and that it is also sky blue. The original font color is a dark slate grey. All these styling choices were based off what the website looked like previously. But I wanted to change that up when someone hovered over an image. I wanted the images to stand out, and change subtly. This is where the hover effect comes into play, I got to play around with many different things when I wanted to have an image hover effect. I did not want to take away from the pictures themselves but merely emphasize the one you were looking at in particular. Below is the snippet of code that allowed me to change the states when hovering over an image.</p>
-
-                <img src="img/image-hover-css.png" alt="Image gallery hover css styling">
-
-                <p>As you can see from the code above, I change some minor things when the image is hovered over. First off to get the effect of something when it is hovered over, you need to make sure that that even is listened for. In order to do that you need to put the specific element you want the user to hover over colon hover. This is what you see in yellow at the top of the code. Inside those brackets will execute when the user hovers over that element in particular. As you can see I put a hover effect on the entire figure, this includes the image and the caption as stated in the first paragraph. Once the user hovers over any part of the figure element, the opacity will change slightly. This adds a nice emphasis on the figure being hovered over. The next change that occurs is the border, instead of it being one solid border, it is now two separate lines, and it changes to the color orange. Then I put a box shadow around the border to make the figure pop off the page. Lastly, I changed the font color to dark orange to make it change completely. Now that you have read this entire blog on how the hover effect works on the image gallery, why don’t you go back up and try it for yourself. Try to think of everything that is going on when you hover over the image. Don’t just try to hover over the image itself, hover over the image caption or maybe just the border itself. What happens?</p>
-
-                <p id="hover_example">Hover over me!</p>
-            </div>
-
-        </article>
-
-        <!--Contact form Section-->
-
-        <section id="contact">
-
-            <h2>Contact Me:</h2>
-
-            <form id="contactForm" name="contactForm" method="post" data-netlify="true">
-
-                <fieldset>
-
-                    <legend>Contact Form</legend>
-
-                    <div id="formElements">
-
-                        <label for="name">Enter your name (required)</label>
-                        <input type="text" id="name" name="name" required>
-
-                        <label for="email">Enter your email address (required)</label>
-                        <input type="email" id="email" name="email" required>
-
-                        <label for="tel">Phone (optional)</label>
-                        <input type="tel" id="phone" name="phone">
-
-                        <label for="phonetype">Select phone type</label>
-                        <select id="phonetype" name="phonetype">
-                            <option value="">Select Phone Type</option>
-                            <option value="Work">Work</option>
-                            <option value="Home">Home</option>
-                            <option value="Mobile">Mobile</option>
-                        </select>
-
-                        <label for="message">Message (optional)</label>
-                        <textarea id="message" name= "message" rows="8">Comment!</textarea>
-
-                        <fieldset>
-
-                            <legend>Would you like a reply?</legend>
-
-                            <ul>
-                                <li>
-                                    <input type="radio" name="reply" id="message-yes">
-                                    <label for="message-yes">Yes, I would like a reply.</label>
-                                </li>
-                                <li>
-                                    <input type="radio" name="reply" id="message-no" checked>
-                                    <label for="message-no">No, Thanks.</label>
-                                </li>
-                            </ul>
-
-                        </fieldset>
-                    
-                    </div>
-
-                    <button type="submit">Submit</button>
-
-                </fieldset>
-
-            </form>
-
-        </section>
-
-    </main>
-
-    <!--Footer-->
-
-    <footer>
-        &copy; Adam Millman
-        <a href="https://github.com/Adam-Millman"><i class="fa fa-github"></a></i>
-        <br><a href="https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-github">github image source</a></p>
-    </footer>
 </body>
 </html>

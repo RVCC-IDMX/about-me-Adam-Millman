@@ -1,82 +1,188 @@
-// Function to fetch GitHub repositories
-async function fetchGitHubProjects() {
+// Configuration - Add the names of repositories you want to display
+const REPOSITORIES_TO_SHOW = [ 
+    'Discord-bot',             
+    'API-Based-App',
+];
+
+// Project media configuration
+const PROJECT_MEDIA = {
+    'API-Based-App': {
+        type: 'apod',
+        title: 'NASA Astronomy Picture of the Day'
+    },
+    'Discord-bot': {
+        type: 'svg',
+        src: 'img/icons/discord.svg',
+        title: 'Discord Bot Project'
+    },
+    'Mini Challenge 3': {
+        type: 'video',
+        src: 'img/Mini Challenge #3.mp4',
+        title: 'Mini Challenge 3 Animation',
+        poster: 'img/website-contrast.png'
+    },
+    'Mid-Term Animation': {
+        type: 'video',
+        src: 'img/Mid-Term Animation.mp4',
+        title: 'Mid-Term Animation Project',
+        poster: 'img/website-contrast-dark-blue.png'
+    },
+    'Typing Animation': {
+        type: 'video',
+        src: 'img/Typing Animation.mp4',
+        title: 'Typing Animation Project',
+        poster: 'img/website-contrast.png'
+    }
+};
+
+// Project descriptions and details
+const PROJECT_DETAILS = {
+    'Discord-bot': {
+        description: 'A custom Discord bot with various features and commands.',
+        language: 'JavaScript',
+        link: 'https://github.com/Adam-Millman/Discord-bot'
+    },
+    'API-Based-App': {
+        description: 'An application that integrates with external APIs to provide dynamic content.',
+        language: 'JavaScript',
+        link: 'https://github.com/Adam-Millman/API-Based-App'
+    },
+    'Mini Challenge 3': {
+        description: 'A web animation project showcasing interactive elements and transitions.',
+        language: 'HTML/CSS',
+        link: '#'
+    },
+    'Mid-Term Animation': {
+        description: 'An advanced animation project demonstrating complex motion and effects.',
+        language: 'HTML/CSS',
+        link: '#'
+    },
+    'Typing Animation': {
+        description: 'A typing animation project featuring smooth text transitions and effects.',
+        language: 'HTML/CSS',
+        link: '#'
+    }
+};
+
+// Function to fetch NASA APOD
+async function fetchAPOD() {
     try {
-        console.log('Fetching GitHub projects...');
-        
-        // Fetch user repositories
-        const userResponse = await fetch('https://api.github.com/users/Adam-Millman/repos?sort=updated&direction=desc');
-        const userRepos = await userResponse.json();
-        console.log('User repositories:', userRepos.length);
-
-        // Fetch organizations
-        const orgsResponse = await fetch('https://api.github.com/users/Adam-Millman/orgs');
-        const orgs = await orgsResponse.json();
-        console.log('Organizations:', orgs);
-
-        // Fetch repositories for each organization
-        let orgRepos = [];
-        for (const org of orgs) {
-            try {
-                const orgReposResponse = await fetch(`https://api.github.com/orgs/${org.login}/repos?sort=updated&direction=desc`);
-                const repos = await orgReposResponse.json();
-                console.log(`Repositories for ${org.login}:`, repos.length);
-                orgRepos = orgRepos.concat(repos);
-            } catch (error) {
-                console.error(`Error fetching repos for ${org.login}:`, error);
-            }
+        const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching APOD:', error);
+        return {
+            url: 'img/img-hover-css.png',
+            title: 'NASA Astronomy Picture of the Day'
+        };
+    }
+}
 
-        // Combine and sort all repositories
-        const allRepos = [...userRepos, ...orgRepos]
-            .filter(project => !project.fork)
-            .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
-            .slice(0, 6);
+// Function to create media element based on type
+function createMediaElement(mediaConfig, apodData = null) {
+    if (!mediaConfig) return '';
 
-        console.log('Total unique repositories:', allRepos.length);
-        
+    let mediaHtml = '';
+    const title = mediaConfig.title;
+
+    switch (mediaConfig.type) {
+        case 'apod':
+            if (apodData) {
+                mediaHtml = `
+                    <div class="project-image">
+                        <img src="${apodData.url}" alt="${title}">
+                        <div class="image-overlay">
+                            <p>${title}</p>
+                        </div>
+                    </div>`;
+            } else {
+                mediaHtml = `
+                    <div class="project-image">
+                        <img src="img/img-hover-css.png" alt="Fallback image">
+                        <div class="image-overlay">
+                            <p>${title}</p>
+                        </div>
+                    </div>`;
+            }
+            break;
+        case 'svg':
+            mediaHtml = `
+                <div class="project-image">
+                    <object type="image/svg+xml" data="${mediaConfig.src}" class="svg-content">
+                        ${title}
+                    </object>
+                    <div class="image-overlay">
+                        <p>${title}</p>
+                    </div>
+                </div>`;
+            break;
+        case 'video':
+            mediaHtml = `
+                <div class="project-image">
+                    <video 
+                        src="${mediaConfig.src}" 
+                        ${mediaConfig.poster ? `poster="${mediaConfig.poster}"` : ''}
+                        loop
+                        muted
+                        playsinline
+                        controls
+                    >
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="image-overlay">
+                        <p>${title}</p>
+                    </div>
+                </div>`;
+            break;
+    }
+
+    return mediaHtml;
+}
+
+// Function to create project cards
+async function createProjectCards() {
+    try {
         const projectsContainer = document.querySelector('.projects-container');
         projectsContainer.innerHTML = ''; // Clear existing content
 
-        allRepos.forEach(project => {
+        // Fetch APOD if needed
+        const apodData = REPOSITORIES_TO_SHOW.includes('API-Based-App') ? await fetchAPOD() : null;
+
+        // Create project cards
+        REPOSITORIES_TO_SHOW.forEach(projectName => {
             const projectCard = document.createElement('a');
             projectCard.className = 'project-card';
-            projectCard.href = project.html_url;
+            projectCard.href = PROJECT_DETAILS[projectName].link;
             projectCard.target = '_blank';
             projectCard.rel = 'noopener noreferrer';
             
-            // Get the primary language color if available
-            const languageColor = project.language ? getLanguageColor(project.language) : '#5865F2';
+            const projectDetails = PROJECT_DETAILS[projectName];
+            const mediaConfig = PROJECT_MEDIA[projectName];
+            const mediaHtml = createMediaElement(mediaConfig, apodData);
             
-            // Get organization name if it's an org repo
-            const orgName = project.owner.type === 'Organization' ? project.owner.login : null;
+            const languageColor = getLanguageColor(projectDetails.language);
             
             projectCard.innerHTML = `
                 <div class="project-info">
-                    <h3>${project.name}</h3>
-                    ${orgName ? `<span class="project-org">${orgName}</span>` : ''}
-                    <p>${project.description || 'No description available'}</p>
+                    <h3>${projectName}</h3>
+                    <p>${projectDetails.description}</p>
                     <div class="project-meta">
                         <span class="project-language" style="background-color: ${languageColor}">
-                            ${project.language || 'Unknown'}
-                        </span>
-                        <span class="project-stars">
-                            <i class="fa fa-star"></i> ${project.stargazers_count}
+                            ${projectDetails.language}
                         </span>
                     </div>
-                    ${project.homepage ? `
-                        <div class="project-links">
-                            <a href="${project.homepage}" class="project-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
-                                View Project
-                            </a>
-                        </div>
-                    ` : ''}
                 </div>
+                ${mediaHtml}
             `;
             
             projectsContainer.appendChild(projectCard);
         });
     } catch (error) {
-        console.error('Error fetching GitHub projects:', error);
+        console.error('Error creating project cards:', error);
         const projectsContainer = document.querySelector('.projects-container');
         projectsContainer.innerHTML = `
             <p class="error-message">
@@ -117,4 +223,4 @@ function getLanguageColor(language) {
 }
 
 // Call the function when the page loads
-document.addEventListener('DOMContentLoaded', fetchGitHubProjects); 
+document.addEventListener('DOMContentLoaded', createProjectCards); 

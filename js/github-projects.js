@@ -28,8 +28,11 @@ const PROJECT_MEDIA = {
 async function fetchAPOD() {
     try {
         const apiKey = window.NASA_API_KEY || 'DEMO_KEY';
+        console.log('Using API key:', apiKey);
         const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`);
+        console.log('API Response:', response);
         const data = await response.json();
+        console.log('APOD Data:', data);
         return data;
     } catch (error) {
         console.error('Error fetching APOD:', error);

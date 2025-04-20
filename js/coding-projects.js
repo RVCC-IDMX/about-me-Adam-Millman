@@ -1,7 +1,8 @@
 // Configuration - Add the names of coding repositories you want to display
 const CODING_PROJECTS = [ 
     'Discord-bot',             
-    'API-Based-App'
+    'API-Based-App',
+    'Final-Project'
 ];
 
 // Project media configuration
@@ -14,6 +15,11 @@ const PROJECT_MEDIA = {
         type: 'image',
         src: 'img/icons/discord.svg',
         title: 'Discord Bot Project'
+    },
+    'final-project': {
+        type: 'image',
+        src: 'img/escape room.jpg',
+        title: 'Escape Room Project'
     }
 };
 
@@ -46,7 +52,7 @@ function createMediaElement(mediaConfig, apodData = null) {
             const imageTitle = apodData?.title || title;
             mediaHtml = `
                 <div class="project-image">
-                    <img src="${imageUrl}" alt="${imageTitle}">
+                    <img src="${imageUrl}" alt="${imageTitle}" style="${mediaConfig.style || ''}">
                     <div class="image-overlay">
                         <p>${imageTitle}</p>
                     </div>
@@ -55,7 +61,7 @@ function createMediaElement(mediaConfig, apodData = null) {
         case 'image':
             mediaHtml = `
                 <div class="project-image">
-                    <img src="${mediaConfig.src}" alt="${title}">
+                    <img src="${mediaConfig.src}" alt="${title}" style="${mediaConfig.style || ''}">
                     <div class="image-overlay">
                         <p>${title}</p>
                     </div>
@@ -69,18 +75,25 @@ function createMediaElement(mediaConfig, apodData = null) {
 // Function to fetch GitHub repositories
 async function fetchGitHubProjects() {
     try {
+        console.log('Fetching repositories...');
         const userResponse = await fetch('https://api.github.com/users/Adam-Millman/repos?sort=updated&direction=desc');
         const userRepos = await userResponse.json();
+        
+        console.log('All repositories:', userRepos.map(repo => repo.name));
+        console.log('Looking for:', CODING_PROJECTS);
         
         // Filter repositories based on the configuration
         const filteredRepos = userRepos.filter(repo => 
             CODING_PROJECTS.includes(repo.name)
         );
         
+        console.log('Filtered repositories:', filteredRepos.map(repo => repo.name));
+        
         const projectsContainer = document.querySelector('.projects-container');
         projectsContainer.innerHTML = ''; // Clear existing content
 
         if (filteredRepos.length === 0) {
+            console.log('No matching repositories found');
             projectsContainer.innerHTML = `
                 <p class="error-message">
                     No projects found. Please check your repository configuration.
@@ -96,6 +109,7 @@ async function fetchGitHubProjects() {
         }
 
         filteredRepos.forEach(project => {
+            console.log('Creating card for:', project.name);
             const projectCard = document.createElement('a');
             projectCard.className = 'project-card';
             projectCard.href = project.html_url;
@@ -169,4 +183,4 @@ function getLanguageColor(language) {
 }
 
 // Call the function when the page loads
-document.addEventListener('DOMContentLoaded', fetchGitHubProjects); 
+document.addEventListener('DOMContentLoaded', fetchGitHubProjects);

@@ -2,7 +2,8 @@
 const REPOSITORIES_TO_SHOW = [ 
     'Discord-bot',             
     'API-Based-App',
-    'project-3'
+    'Final-Project',
+    'Project-2',
 ];
 
 // Project media configuration

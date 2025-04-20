@@ -9,7 +9,8 @@ const CODING_PROJECTS = [
 const PROJECT_MEDIA = {
     'API-Based-App': {
         type: 'apod',
-        title: 'NASA Astronomy Picture of the Day'
+        title: 'NASA Astronomy Picture of the Day',
+        fallbackImage: 'img/fallback-apod.jpg'
     },
     'Discord-bot': {
         type: 'image',
@@ -26,14 +27,13 @@ const PROJECT_MEDIA = {
 // Function to fetch NASA APOD
 async function fetchAPOD() {
     try {
-        const apiKey = window.NASA_API_KEY || 'DEMO_KEY';
-        const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`);
-        const data = await response.json();
-        return data;
+        const response = await fetch('/.netlify/functions/apod');
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        return await response.json();
     } catch (error) {
         console.error('Error fetching APOD:', error);
         return {
-            url: 'https://apod.nasa.gov/apod/image/2404/STScI-01.jpg',
+            url: 'img/fallback-apod.jpg',
             title: 'NASA Astronomy Picture of the Day'
         };
     }

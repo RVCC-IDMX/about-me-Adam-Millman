@@ -457,69 +457,48 @@ footer {
 
 /* Projects Page Styles */
 .projects-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Project Cards */
 .project-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--discord-darker);
     border-radius: 15px;
-    padding: 25px;
-    margin: 0;
-    width: 100%;
-    max-width: 900px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    position: relative;
-    overflow: visible;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    gap: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-decoration: none;
-    color: inherit;
+    color: var(--discord-text);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 300px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(88, 101, 242, 0.2);
+    border-color: var(--discord-blurple);
 }
 
 .project-info {
+    padding: 2rem;
     flex: 1;
-    min-width: 0;
-    padding-right: 20px;
-}
-
-.project-info h3 {
-    color: var(--header-color);
-    margin-bottom: 15px;
-    font-size: 1.6rem;
-    font-weight: 600;
-}
-
-.project-info p {
-    color: var(--discord-text-secondary);
-    margin-bottom: 20px;
-    line-height: 1.6;
-    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .project-image {
     position: relative;
     width: 300px;
-    height: 300px;
-    flex-shrink: 0;
-    border-radius: 12px;
+    height: 100%;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--discord-darker);
+    flex-shrink: 0;
 }
 
 .project-image img,
@@ -530,15 +509,9 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.project-image img[src$=".svg"] {
-    width: 80%;
-    height: 80%;
-    object-fit: contain;
-    padding: 20px;
-}
-
-.project-image video {
-    background-color: #000;
+.project-card:hover .project-image img,
+.project-card:hover .project-image video {
+    transform: scale(1.05);
 }
 
 .image-overlay {
@@ -546,84 +519,54 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 1rem;
     color: white;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
 }
 
 .image-overlay p {
     margin: 0;
-    font-size: 1rem;
-    line-height: 1.4;
+    font-size: 0.9rem;
+    opacity: 0.9;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    border-color: var(--discord-blurple);
-    text-decoration: none;
+.project-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--discord-text);
+    font-size: 1.5rem;
 }
 
-.project-card:hover .image-overlay {
-    opacity: 1;
-}
-
-.project-card:hover .project-image img,
-.project-card:hover .project-image video {
-    transform: scale(1.05);
-}
-
-/* Video controls styling */
-.project-image video::-webkit-media-controls {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.project-image video:hover::-webkit-media-controls {
-    opacity: 1;
-}
-
-.project-image video::-webkit-media-controls-panel {
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+.project-info p {
+    margin: 0 0 1rem 0;
+    color: var(--discord-text-secondary);
+    line-height: 1.6;
 }
 
 .project-meta {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
 .project-language {
-    padding: 6px 12px;
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
     border-radius: 15px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: white;
 }
 
-.project-stars {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: var(--discord-text-secondary);
-}
-
 .project-links {
-    margin-top: 20px;
+    margin-top: auto;
 }
 
 .project-link {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 0.5rem 1rem;
     background: var(--discord-blurple);
     color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: all 0.3s ease;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .project-link:hover {
@@ -632,44 +575,127 @@ footer {
 }
 
 .error-message {
-    color: var(--discord-text);
     text-align: center;
+    color: var(--discord-text-secondary);
     padding: 2rem;
-    background: var(--transparent-bg);
+    background: var(--discord-darker);
     border-radius: 10px;
-    margin: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px) {
     .projects-container {
-        padding: 20px 15px;
-        gap: 30px;
+        grid-template-columns: 1fr;
+        padding: 1rem;
     }
     
     .project-card {
-        padding: 20px;
+        flex-direction: column;
+        height: auto;
     }
     
     .project-image {
         width: 100%;
-        height: 250px;
+        height: 200px;
+    }
+}
+
+/* Animations Page Styles */
+.animations-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+    gap: 3rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.animation-card {
+    background: var(--discord-darker);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 400px;
+}
+
+.animation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(88, 101, 242, 0.2);
+    border-color: var(--discord-blurple);
+}
+
+.animation-info {
+    padding: 2.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 300px;
+}
+
+.animation-info h3 {
+    margin: 0 0 1rem 0;
+    color: var(--discord-text);
+    font-size: 1.8rem;
+}
+
+.animation-info p {
+    margin: 0 0 1.5rem 0;
+    color: var(--discord-text-secondary);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.animation-media {
+    flex: 2;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+.animation-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.animation-card:hover .animation-media video {
+    transform: scale(1.05);
+}
+
+@media (max-width: 1200px) {
+    .animations-container {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
     }
     
-    .project-info {
-        padding-right: 0;
-        width: 100%;
+    .animation-card {
+        height: 500px;
+        flex-direction: column;
+    }
+    
+    .animation-info {
+        max-width: none;
+        padding: 2rem;
+    }
+    
+    .animation-media {
+        flex: none;
+        height: 300px;
     }
 }
 
-/* Logo styles */
-.navbar .logo img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
-    filter: brightness(0) invert(1); /* This will make the logo white */
-}
-
-.navbar .logo img:hover {
-    transform: scale(1.1);
-    filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--discord-blurple));
+@media (max-width: 768px) {
+    .animation-card {
+        height: auto;
+    }
+    
+    .animation-media {
+        height: 250px;
+    }
 }

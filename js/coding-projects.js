@@ -1,8 +1,7 @@
-// Configuration - Add the names of repositories you want to display
-const REPOSITORIES_TO_SHOW = [ 
+// Configuration - Add the names of coding repositories you want to display
+const CODING_PROJECTS = [ 
     'Discord-bot',             
-    'API-Based-App',
-    'project-3'
+    'API-Based-App'
 ];
 
 // Project media configuration
@@ -15,19 +14,14 @@ const PROJECT_MEDIA = {
         type: 'image',
         src: 'img/icons/discord.svg',
         title: 'Discord Bot Project'
-    },
-    'project-3': {
-        type: 'video',
-        src: 'img/project3-demo.mp4',
-        title: 'Project 3 Demo',
-        poster: 'img/project3-poster.jpg'
     }
 };
 
 // Function to fetch NASA APOD
 async function fetchAPOD() {
     try {
-        const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
+        const apiKey = window.NASA_API_KEY || 'DEMO_KEY';
+        const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -67,24 +61,6 @@ function createMediaElement(mediaConfig, apodData = null) {
                     </div>
                 </div>`;
             break;
-        case 'video':
-            mediaHtml = `
-                <div class="project-image">
-                    <video 
-                        src="${mediaConfig.src}" 
-                        ${mediaConfig.poster ? `poster="${mediaConfig.poster}"` : ''}
-                        loop
-                        muted
-                        playsinline
-                        controls
-                    >
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="image-overlay">
-                        <p>${title}</p>
-                    </div>
-                </div>`;
-            break;
     }
 
     return mediaHtml;
@@ -93,19 +69,13 @@ function createMediaElement(mediaConfig, apodData = null) {
 // Function to fetch GitHub repositories
 async function fetchGitHubProjects() {
     try {
-        console.log('Fetching GitHub projects...');
-        
-        // Fetch user repositories
         const userResponse = await fetch('https://api.github.com/users/Adam-Millman/repos?sort=updated&direction=desc');
         const userRepos = await userResponse.json();
-        console.log('User repositories:', userRepos.length);
-
+        
         // Filter repositories based on the configuration
         const filteredRepos = userRepos.filter(repo => 
-            REPOSITORIES_TO_SHOW.includes(repo.name)
+            CODING_PROJECTS.includes(repo.name)
         );
-
-        console.log('Filtered repositories:', filteredRepos.length);
         
         const projectsContainer = document.querySelector('.projects-container');
         projectsContainer.innerHTML = ''; // Clear existing content
@@ -119,6 +89,12 @@ async function fetchGitHubProjects() {
             return;
         }
 
+        // Fetch APOD data if API-Based-App is in the list
+        let apodData = null;
+        if (filteredRepos.some(repo => repo.name === 'API-Based-App')) {
+            apodData = await fetchAPOD();
+        }
+
         filteredRepos.forEach(project => {
             const projectCard = document.createElement('a');
             projectCard.className = 'project-card';
@@ -126,11 +102,8 @@ async function fetchGitHubProjects() {
             projectCard.target = '_blank';
             projectCard.rel = 'noopener noreferrer';
             
-            // Get the primary language color if available
             const languageColor = project.language ? getLanguageColor(project.language) : '#5865F2';
-            
-            // Get media element based on project configuration
-            const mediaHtml = createMediaElement(PROJECT_MEDIA[project.name]);
+            const mediaHtml = createMediaElement(PROJECT_MEDIA[project.name], apodData);
 
             projectCard.innerHTML = `
                 <div class="project-info">

@@ -17,9 +17,9 @@ const PROJECT_MEDIA = {
         src: 'img/icons/discord.svg',
         title: 'Discord Bot Project'
     },
-    'final-project': {
+    'Final-Project': {
         type: 'image',
-        src: 'img/escape room.jpg',
+        src: 'img/escape-room.jpeg',
         title: 'Escape Room Project'
     }
 };

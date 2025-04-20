@@ -523,33 +523,22 @@ footer {
 }
 
 .project-image img,
-.project-image video,
-.project-image object {
+.project-image video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.project-image:hover img,
-.project-image:hover video,
-.project-image:hover object {
-    transform: scale(1.05);
-}
-
-/* Specific styles for video content */
-.project-image video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background-color: #000;
-}
-
-/* Specific styles for SVG content */
-.project-image object {
+.project-image img[src$=".svg"] {
     width: 80%;
     height: 80%;
+    object-fit: contain;
     padding: 20px;
+}
+
+.project-image video {
+    background-color: #000;
 }
 
 .image-overlay {

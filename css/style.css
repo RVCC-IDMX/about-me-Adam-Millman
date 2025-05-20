@@ -20,19 +20,19 @@ body {
     padding: 0;
 }
 
-/* Typography */
+
 h1, h2, h3, h4 {
     font-family: 'Poppins', sans-serif;
     color: var(--header-color);
 }
 
 h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: 3rem;
     font-weight: 700;
 }
 
 h2 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-size: 2rem;
     text-align: center;
     margin-bottom: 2rem;
     position: relative;
@@ -52,7 +52,7 @@ h2::after {
 
 h3 {
     color: var(--header-color);
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-size: 1.5rem;
     margin: 0 0 1rem 0;
 }
 
@@ -68,7 +68,7 @@ h3 {
     overflow: hidden;
 }
 
-/* Floating Icons */
+
 .floating-icons {
     position: absolute;
     top: 0;
@@ -80,8 +80,8 @@ h3 {
 
 .floating-icon {
     position: absolute;
-    width: clamp(50px, 6vw, 90px);
-    height: clamp(50px, 6vw, 90px);
+    width: 5vw;
+    height: 5vw;
     opacity: 0.2;
     transition: opacity 0.3s ease;
     z-index: 1;
@@ -105,25 +105,25 @@ h3 {
     transform: scale(1.1);
 }
 
-/* Bio Section */
+
 .bio-container {
     background: var(--transparent-bg);
     padding: 2.5rem;
     border-radius: 8px;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
     max-width: 800px;
-    width: 90%;
+
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1;
 }
 
 .bio-img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
+    width: 200px;
+    height: 200px;
+
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--discord-blurple);
@@ -146,18 +146,19 @@ h3 {
 }
 
 #hobbies ol {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0;
+
 }
 
 #hobbies ol li {
-    flex: 1 1 250px;
-    max-width: 400px;
+
+
     background: var(--transparent-bg);
     padding: 2rem;
     border-radius: 8px;
@@ -217,8 +218,8 @@ h3 {
 }
 
 .skill-item img {
-    width: 50px; /* Slightly increased */
-    height: 50px;
+    width: 40px;
+    height: 40px;
     margin-bottom: 0.8rem;
     filter: grayscale(100%) brightness(0) invert(1);
     transition: all 0.3s ease;
@@ -252,7 +253,7 @@ h3 {
 
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -278,9 +279,10 @@ h3 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Ensure images maintain consistent size */
-.gallery-container img {
-    max-width: clamp(250px, 90%, 600px);
+figcaption {
+    color: var(--discord-text-secondary);
+    font-size: 1.1rem;
+    text-align: center;
 }
 
 /* Contact section */
@@ -304,12 +306,98 @@ h3 {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Improve input responsiveness */
+.form-group {
+    margin-bottom: 1.8rem;
+    text-align: left;
+    width: 100%;
+}
+
+#contactForm label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: var(--discord-text);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
 #contactForm input,
 #contactForm textarea {
     width: 100%;
-    padding: 1rem;
-    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    padding: 0.9rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    color: var(--discord-text);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+    color: var(--discord-text-secondary);
+    opacity: 0.7;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    outline: none;
+    border-color: var(--discord-blurple);
+    box-shadow: 0 0 0 2px rgba(88, 101, 242, 0.2);
+}
+
+#contactForm textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#contactForm button {
+    background: var(--discord-blurple);
+    color: white;
+    padding: 0.9rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+#contactForm button:hover {
+    background: #4752C4;
+    transform: translateY(-2px);
+}
+
+#contactForm .form-message {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+#contactForm .success {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--discord-text);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#contactForm .error {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--discord-text);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 3rem 1rem;
+    }
+    
+    #contactForm {
+        padding: 2rem;
+    }
 }
 
 /* Footer */
@@ -324,12 +412,13 @@ footer {
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem;
+    margin-bottom: 1rem;
 }
 
 .social-icon {
-    width: clamp(24px, 4vw, 40px);
-    height: clamp(24px, 4vw, 40px);
+    width: 32px;
+    height: 32px;
     transition: transform 0.3s ease, filter 0.3s ease;
     filter: grayscale(100%) brightness(0) invert(1);
 }
@@ -339,21 +428,282 @@ footer {
     filter: none;
 }
 
-/* Responsive adjustments */
+/* Responsive design */
 @media (max-width: 768px) {
-    .contact-section {
-        padding: 3rem 1rem;
+    .bio-container {
+        flex-direction: column;
+        text-align: center;
     }
     
-    #contactForm {
+    .bio-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .skills-scroll {
+        gap: 1rem;
+    }
+    
+    .skill-item {
+        min-width: 100px;
+        padding: 1rem;
+    }
+    
+    .skill-item img {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* Projects Page Styles */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: var(--discord-darker);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: var(--discord-text);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 300px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(88, 101, 242, 0.2);
+    border-color: var(--discord-blurple);
+}
+
+.project-info {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-image {
+    position: relative;
+    width: 300px;
+    height: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.project-image img,
+.project-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img,
+.project-card:hover .project-image video {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 1rem;
+    color: white;
+}
+
+.image-overlay p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.project-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--discord-text);
+    font-size: 1.5rem;
+}
+
+.project-info p {
+    margin: 0 0 1rem 0;
+    color: var(--discord-text-secondary);
+    line-height: 1.6;
+}
+
+.project-meta {
+    margin-bottom: 1rem;
+}
+
+.project-language {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    color: white;
+}
+
+.project-links {
+    margin-top: auto;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--discord-blurple);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.project-link:hover {
+    background: #4752C4;
+    transform: translateY(-2px);
+}
+
+.error-message {
+    text-align: center;
+    color: var(--discord-text-secondary);
+    padding: 2rem;
+    background: var(--discord-darker);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .project-card {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .project-image {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+/* Animations Page Styles */
+.animations-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+    gap: 3rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.animation-card {
+    background: var(--discord-darker);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 400px;
+}
+
+.animation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(88, 101, 242, 0.2);
+    border-color: var(--discord-blurple);
+}
+
+.animation-info {
+    padding: 2.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 300px;
+}
+
+.animation-info h3 {
+    margin: 0 0 1rem 0;
+    color: var(--discord-text);
+    font-size: 1.8rem;
+}
+
+.animation-info p {
+    margin: 0 0 1.5rem 0;
+    color: var(--discord-text-secondary);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.animation-media {
+    flex: 2;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+.animation-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.animation-card:hover .animation-media video {
+    transform: scale(1.05);
+}
+
+@media (max-width: 1200px) {
+    .animations-container {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+    
+    .animation-card {
+        height: 500px;
+        flex-direction: column;
+    }
+
+    .animation-info {
+        max-width: none;
         padding: 2rem;
     }
-    
-    .gallery-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    .animation-media {
+        flex: none;
+        height: 300px;
     }
-    
-    .social-links {
-        flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .animation-card {
+        height: auto;
+    }
+
+    .animation-media {
+        height: 250px;
     }
 }

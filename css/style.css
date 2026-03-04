@@ -139,39 +139,51 @@ h3 {
     font-size: 1.1rem;
 }
 
-/* Hobbies section */
-#hobbies {
+/* Featured project (SPUD) section */
+#spud {
     padding: 4rem 2rem;
     background-color: var(--discord-darker);
 }
 
-#hobbies ol {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
+.featured-content {
+    max-width: 900px;
     margin: 0 auto;
-
-}
-
-#hobbies ol li {
-
-
     background: var(--transparent-bg);
-    padding: 2rem;
-    border-radius: 8px;
-    text-align: center;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
+    padding: 2.5rem;
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-#hobbies ol li:hover {
-    transform: translateY(-5px);
-    background: rgba(88, 101, 242, 0.1);
-    border-color: var(--discord-blurple);
+.featured-video {
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+}
+
+.featured-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.featured-content h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.featured-content p {
+    color: var(--discord-text-secondary);
+    margin-bottom: 1rem;
+}
+
+.featured-links {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 /* Skills section */
@@ -406,7 +418,6 @@ footer {
     color: var(--discord-text);
     text-align: center;
     padding: 2rem;
-    margin-top: 4rem;
 }
 
 .social-links {

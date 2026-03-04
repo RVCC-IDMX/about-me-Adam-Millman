@@ -173,6 +173,7 @@ footer {
     padding: 0.5rem 1rem;
     border-radius: 4px;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .nav-links a:hover {
@@ -182,7 +183,24 @@ footer {
 
 .nav-links a.active {
     color: var(--discord-text);
-    background: var(--discord-blurple);
+    background: transparent;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--discord-blurple);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.nav-links a.active::after {
+    width: 60%;
 }
 
 /* Add padding to main content to account for fixed navbar */
